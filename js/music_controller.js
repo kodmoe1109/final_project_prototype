@@ -38,6 +38,7 @@ function music() {
 
     $("#piano").click(function () {
         piano.play();
+        $('#piano').attr('disabled','disabled');
     })
     $("#saxophone").click(function () {
         saxophone.play();
