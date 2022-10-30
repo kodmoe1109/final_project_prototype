@@ -1,5 +1,6 @@
 #band{
-    position: relative;
+    height: 800px;
+    width: 800px;
 }
 #piano_img {
     width: 100%;
