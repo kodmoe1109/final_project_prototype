@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+        integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md">
+                <span>目前播放狀態 : </span><em id="state"></em>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <button type="button" class="btn btn-primary" id="piano">Piano</button>
+                <button type="button" class="btn btn-secondary" id="saxophone">Saxophone</button>
+                <button type="button" class="btn btn-success" id="drum">Drum Kit</button>
+                <button type="button" class="btn btn-danger" id="cello">Cello</button>
+            </div>
+            <div class="col-md-4">
+                <label for="Range1">Pinao Rate</label>
+                <input type="range" class="custom-range" id="speed1" min="0.1" max="2" value="1" step="0.01">
+                <label for="Range1">Saxophone Rate</label>
+                <input type="range" class="custom-range" id="speed2" min="0.1" max="2" value="1" step="0.01">
+                <label for="Range1">Drum Kit Rate</label>
+                <input type="range" class="custom-range" id="speed3" min="0.1" max="2" value="1" step="0.01">
+                <label for="Range1">Cello Rate</label>
+                <input type="range" class="custom-range" id="speed4" min="0.1" max="2" value="1" step="0.01">
+            </div>
+            <div class="col-md-4">
+                <label for="Range1">Pinao Volume</label>
+                <input type="range" class="custom-range" id="Range1" min="0" max="1" value="0.5" step="0.01">
+                <label for="Range1">Saxophone Volume</label>
+                <input type="range" class="custom-range" id="Range2" min="0" max="1" value="0.5" step="0.01">
+                <label for="Range1">Drum Kit Volume</label>
+                <input type="range" class="custom-range" id="Range3" min="0" max="1" value="0.5" step="0.01">
+                <label for="Range1">Cello Volume</label>
+                <input type="range" class="custom-range" id="Range4" min="0" max="1" value="0.5" step="0.01">
+            </div>
+        </div>
+
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    const elms = ['piano','saxophone','drum','cello'] 
+    const musicArr = ["./music/piano.mp3", "./music/saxophone.mp3", "./music/drum.mp3", "./music/cello.mp3"];
+    let _rate = 1;
+    let _volume = 0.5;
+    
+    let piano = new Howl({
+        // 參數設定[註1]
+        src: musicArr[0],
+        autoplay: false, // 自動播放
+        loop: false, // 無限循環
+        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
+        rate: _rate,
+    });
+    let saxophone = new Howl({
+        // 參數設定[註1]
+        src: musicArr[1],
+        autoplay: false, // 自動播放
+        loop: false, // 無限循環
+        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
+        rate: _rate,
+    });
+    let drum = new Howl({
+        // 參數設定[註1]
+        src: musicArr[2],
+        autoplay: false, // 自動播放
+        loop: false, // 無限循環
+        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
+        rate: _rate,
+    });
+    let cello = new Howl({
+        // 參數設定[註1]
+        src: musicArr[3],
+        autoplay: false, // 自動播放
+        loop: false, // 無限循環
+        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
+        rate: _rate,
+    });
+
+    $("#piano").click(function () {
+        piano.play();
+    })
+    $("#saxophone").click(function () {
+        saxophone.play();
+    })
+    $("#drum").click(function () {
+        drum.play();
+    })
+    $("#cello").click(function () {
+        cello.play();
+    })
+    $('#Range1').change(function(){
+        piano.volume($('#Range1').val())
+    })
+    $('#Range2').change(function(){
+        saxophone.volume($('#Range2').val())
+    })
+    $('#Range3').change(function(){
+        drum.volume($('#Range3').val())
+    })
+    $('#Range4').change(function(){
+        cello.volume($('#Range4').val())
+    })
+    $('#speed1').change(function(){
+        piano.rate($('#speed1').val())
+    })
+    $('#speed2').change(function(){
+        saxophone.rate($('#speed2').val())
+    })
+    $('#speed3').change(function(){
+        drum.rate($('#speed3').val())
+    })
+    $('#speed4').change(function(){
+        cello.rate($('#speed4').val())
+    })
+    
+</script>
+
+
+</script>
