@@ -1,6 +1,6 @@
 
 function music() {
-    const musicArr = ["./music/piano.mp3", "./music/saxophone.mp3", "./music/drum.mp3", "./music/cello.mp3"];
+    const musicArr = ["./music/piano.wav", "./music/saxophone.wav", "./music/drum.wav", "./music/bass.wav"];
     let _rate = 1;
     let _volume = 0.5;
 
