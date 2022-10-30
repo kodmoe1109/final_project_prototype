@@ -1,3 +1,28 @@
-img{
-    width: 700px;
+#band{
+    position: relative;
+}
+#piano_img {
+    width: 100%;
+    position: relative;
+    left:200px;
+    z-index:10;
+}
+
+#cello_img {
+    width: 100%;
+    position: absolute;
+    z-index:20;
+    left:200px;
+}
+
+#saxophone_img {
+    width: 100%;
+    position: absolute;
+    left:200px;
+}
+
+#drum_img {
+    width: 100%;
+    position: absolute;
+    left:200px;
 }

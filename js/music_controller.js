@@ -38,16 +38,19 @@ function music() {
 
     $("#piano").click(function () {
         piano.play();
-        $('#piano').attr('disabled','disabled');
+        $('#piano_img').show()
     })
     $("#saxophone").click(function () {
         saxophone.play();
+        $('#saxophone_img').show()
     })
     $("#drum").click(function () {
         drum.play();
+        $('#drum_img').show()
     })
     $("#cello").click(function () {
         cello.play();
+        $('#cello_img').show()
     })
     $('#Range1').change(function () {
         piano.volume($('#Range1').val())

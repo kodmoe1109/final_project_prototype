@@ -22,8 +22,11 @@
 <body>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <img src="./image/cello.png" alt="123" >
+            <div class="col-md-12" id="band">
+                <img src="./image/piano.png" alt="123" id="piano_img">
+                <img src="./image/drum.png" alt="123" id="drum_img">
+                <img src="./image/saxophone.png" alt="123" id="saxophone_img">
+                <img src="./image/cello.png" alt="123" id="cello_img">
             </div>
 
         </div>
@@ -64,6 +67,10 @@
 </html>
 
 <script>
+    $('#piano_img').hide()
+    $('#drum_img').hide()
+    $('#saxophone_img').hide()
+    $('#cello_img').hide()
     music();
 </script>
 
