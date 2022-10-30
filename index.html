@@ -14,6 +14,7 @@
         integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js"></script>
+    <script src="js/music_controller.js"></script>
     <title>Document</title>
 </head>
 
@@ -63,80 +64,7 @@
 
 <script>
     const elms = ['piano','saxophone','drum','cello'] 
-    const musicArr = ["./music/piano.mp3", "./music/saxophone.mp3", "./music/drum.mp3", "./music/cello.mp3"];
-    let _rate = 1;
-    let _volume = 0.5;
-    
-    let piano = new Howl({
-        // 參數設定[註1]
-        src: musicArr[0],
-        autoplay: false, // 自動播放
-        loop: false, // 無限循環
-        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
-        rate: _rate,
-    });
-    let saxophone = new Howl({
-        // 參數設定[註1]
-        src: musicArr[1],
-        autoplay: false, // 自動播放
-        loop: false, // 無限循環
-        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
-        rate: _rate,
-    });
-    let drum = new Howl({
-        // 參數設定[註1]
-        src: musicArr[2],
-        autoplay: false, // 自動播放
-        loop: false, // 無限循環
-        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
-        rate: _rate,
-    });
-    let cello = new Howl({
-        // 參數設定[註1]
-        src: musicArr[3],
-        autoplay: false, // 自動播放
-        loop: false, // 無限循環
-        volume: _volume, // 音量ntById( "state" ).innerText = "結束";
-        rate: _rate,
-    });
-
-    $("#piano").click(function () {
-        piano.play();
-    })
-    $("#saxophone").click(function () {
-        saxophone.play();
-    })
-    $("#drum").click(function () {
-        drum.play();
-    })
-    $("#cello").click(function () {
-        cello.play();
-    })
-    $('#Range1').change(function(){
-        piano.volume($('#Range1').val())
-    })
-    $('#Range2').change(function(){
-        saxophone.volume($('#Range2').val())
-    })
-    $('#Range3').change(function(){
-        drum.volume($('#Range3').val())
-    })
-    $('#Range4').change(function(){
-        cello.volume($('#Range4').val())
-    })
-    $('#speed1').change(function(){
-        piano.rate($('#speed1').val())
-    })
-    $('#speed2').change(function(){
-        saxophone.rate($('#speed2').val())
-    })
-    $('#speed3').change(function(){
-        drum.rate($('#speed3').val())
-    })
-    $('#speed4').change(function(){
-        cello.rate($('#speed4').val())
-    })
-    
+    music();
 </script>
 
 
